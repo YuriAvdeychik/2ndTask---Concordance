@@ -42,7 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Classes\Concordance.cs" />
+    <Compile Include="Classes\ConcordanceCreater.cs" />
+    <Compile Include="Classes\WordInfo.cs" />
+    <Compile Include="Interfaces\IConcordance.cs" />
+    <Compile Include="Interfaces\IWordInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
