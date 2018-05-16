@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Library.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Library.Classes
 {
-    class WordInfo
+    class WordInfo : IWordInfo
     {
         private int _count;
         private string _value;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Library.Interfaces
 {
-    interface IWordInfo
+    public interface IWordInfo
     {
         string Value { get; }
         int Count { get; }

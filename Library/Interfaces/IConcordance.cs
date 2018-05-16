@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Library.Interfaces
 {
-    interface IConcordance
+    public interface IConcordance
     {
         IDictionary<char, IDictionary<string, IWordInfo>> Items { get; }
         void SaveToFile();
