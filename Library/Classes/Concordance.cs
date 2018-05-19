@@ -30,7 +30,7 @@ namespace Library.Classes
             }
         }
 
-        public Concordance(string _aphabet)
+        public Concordance(string _alphabet)
         {
             _items = new Dictionary<char, IDictionary<string, IWordInfo>>();
             foreach (char letter in _alphabet)
@@ -42,7 +42,7 @@ namespace Library.Classes
         public void SaveToFile()
         {
             string currentDirectoryPath = Path.GetDirectoryName(Environment.CurrentDirectory);
-            string pathToFile = Path.Combine(currentDirectoryPath, @"../Concordance.txt");
+            string pathToFile = Path.Combine(currentDirectoryPath, @"..\\../Concordance.txt");
             StreamWriter writer = new StreamWriter(pathToFile, false);
 
             writer.WriteLine("Concordance:");
