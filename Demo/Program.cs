@@ -12,10 +12,8 @@ namespace Demo
     {
         static void Main(string[] args)
         {
-            //string textFilePath = ConfigurationManager.AppSettings["TextFilePath"];
-            //string alhabetFilePath = ConfigurationManager.AppSettings["AlphabetFilePath"];
-            string textFilePath = @"C:\Users\YURI\source\repos\2ndTask---Concordance\Text.txt";
-            string alhabetFilePath = @"C:\Users\YURI\source\repos\2ndTask---Concordance\Alphabet.txt";
+            string textFilePath = ConfigurationManager.AppSettings["TextFilePath"];
+            string alhabetFilePath = ConfigurationManager.AppSettings["AlphabetFilePath"];
 
             ConcordanceCreater concordanceCreater = new ConcordanceCreater(alhabetFilePath);
             Concordance concordance = concordanceCreater.CreateConrcondance(textFilePath, 4); //int N - count of string in one page
