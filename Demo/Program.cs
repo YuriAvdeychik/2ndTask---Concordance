@@ -12,7 +12,7 @@ namespace Demo
     {
         static void Main(string[] args)
         {
-
+            //start
             try
             {
                 string textFilePath = ConfigurationManager.AppSettings["TextFilePath"];
