@@ -43,8 +43,10 @@ namespace Library.Classes
         {
             string currentDirectoryPath = Path.GetDirectoryName(Environment.CurrentDirectory);
             string pathToFile = Path.Combine(currentDirectoryPath, @"..\\../Concordance.txt");
-            StreamWriter writer = new StreamWriter(pathToFile, false);
 
+            try
+            {
+            StreamWriter writer = new StreamWriter(pathToFile, false);
             writer.WriteLine("Concordance:");
             foreach (char mainLetter in this.Items.Keys)
             {
@@ -59,6 +61,11 @@ namespace Library.Classes
                 }
             }
             writer.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+            }
         }
     }
 }

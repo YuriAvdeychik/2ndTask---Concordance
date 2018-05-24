@@ -12,12 +12,19 @@ namespace Demo
     {
         static void Main(string[] args)
         {
-            string textFilePath = ConfigurationManager.AppSettings["TextFilePath"];
-            string alhabetFilePath = ConfigurationManager.AppSettings["AlphabetFilePath"];
 
-            ConcordanceCreater concordanceCreater = new ConcordanceCreater(alhabetFilePath);
-            Concordance concordance = concordanceCreater.CreateConrcondance(textFilePath, 4); //int N - count of string in one page
-            concordance.SaveToFile();
+            try
+            {
+                string textFilePath = ConfigurationManager.AppSettings["TextFilePath"];
+                string alhabetFilePath = ConfigurationManager.AppSettings["AlphabetFilePath"];
+                ConcordanceCreater concordanceCreater = new ConcordanceCreater(alhabetFilePath);
+                Concordance concordance = concordanceCreater.CreateConrcondance(textFilePath, 4); //int N - count of string in one page
+                concordance.SaveToFile();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("ERROR: " + e.Message);
+            }         
 
             Console.ReadKey();
         }
