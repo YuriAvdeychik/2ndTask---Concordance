@@ -43,28 +43,38 @@ namespace Library.Classes
         {
             string currentDirectoryPath = Path.GetDirectoryName(Environment.CurrentDirectory);
             string pathToFile = Path.Combine(currentDirectoryPath, @"..\\../Concordance.txt");
-
+            StreamWriter writer = new StreamWriter(pathToFile, false);
             try
             {
-            StreamWriter writer = new StreamWriter(pathToFile, false);
-            writer.WriteLine("Concordance:");
-            foreach (char mainLetter in this.Items.Keys)
-            {
-                if (this[mainLetter].Values.Count != 0)
+                writer.WriteLine("Concordance:");
+                foreach (char mainLetter in this.Items.Keys)
                 {
-                    writer.WriteLine(mainLetter);
-                    foreach (var items in this[mainLetter])
+                    if (this[mainLetter].Values.Count != 0)
                     {
-                        writer.WriteLine("{0}..........{1}: {2}",
-                            items.Key, items.Value.Count, items.Value.PageNumbersToString());
+                        writer.WriteLine(mainLetter);
+                        foreach (var items in this[mainLetter])
+                             {
+                                 writer.WriteLine("{0}..........{1}: {2}",
+                                 items.Key, items.Value.Count, items.Value.PageNumbersToString());
+                             }
                     }
                 }
-            }
-            writer.Close();
             }
             catch (Exception e)
             {
                 Console.WriteLine("Error: " + e.Message);
+            }
+            finally
+            {
+
+                using (writer)
+
+                {
+
+                    Console.WriteLine("Concordance.txt is released");
+
+                }
+
             }
         }
     }
